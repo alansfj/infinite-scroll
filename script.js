@@ -8,6 +8,8 @@ let ready = false;
 let imagesLoaded = 0;
 let totalImages = 0;
 
+const apiUrl = `https://api.unsplash.com/photos/random?client_id=${apiKey}&count=${count}`;
+
 const imageLoaded = () => {
   imagesLoaded++;
   if (imagesLoaded === totalImages) {
@@ -15,8 +17,6 @@ const imageLoaded = () => {
     $loader.hidden = true;
   }
 };
-
-const apiUrl = `https://api.unsplash.com/photos/random?client_id=${apiKey}&count=${count}`;
 
 async function getPhotos() {
   try {
